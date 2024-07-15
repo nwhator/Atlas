@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS - Results</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        <form action="/websearch" method="post">
+            <input type="text" placeholder="Enter your search query" value={{query}} name="query">
+            <button type="submit">Search</button>
+        </form>
+        {% if urls %}
+        {% for url in urls %}
+        <div class="results">
+            <div class="result">
+                <h3>{{url[1]}}</h3>
+                <a href="{{url[0]}}">{{url[0]}}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {%else%}
+    <h1>No results found for your query.</h1>
+    {% endif %}
+</body>
+</html>

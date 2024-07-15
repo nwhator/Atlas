@@ -10,7 +10,11 @@ def crawler(start_url, max_pages = 100):
               CREATE TABLE IF NOT EXISTS pages (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 url TEXT UNIQUE,
-                content TEXT
+                content TEXT,
+                cleaned_content TEXT,
+                title TEXT,
+                outgoing_links TEXT,
+                pagerank REAL
               )
               ''')
     conn.commit()
@@ -34,14 +38,26 @@ def crawler(start_url, max_pages = 100):
   
       soup = BeautifulSoup(response.content, 'html.parser')
       
-      c.execute('INSERT OR IGNORE INTO pages (url, content) VALUES(?, ?)', (url, str(soup)))
+      if soup.find('title'):
+        title = soup.find('title').string
+        
+      outgoing_links = []
+      for link in soup.find_all('a'):
+        href = link.get('href')
+        if href:
+          outgoing_links.append(href)
+               
+      
+      c.execute('INSERT OR IGNORE INTO pages (url, content, cleaned_content, title, outgoing_links) VALUES(?, ?, ?, ?, ?)', 
+                (url, str(soup), soup.get_text(), title, ','.join(outgoing_links)))
+                
       conn.commit()
       
       links = soup.find_all('a')
 
       for link in links:
           href = link.get("href")
-          if 'http' in href and href not in visited_pages:
+          if href and 'http' in href and href not in visited_pages:
               url_frontier.append(href)
               
       visited_pages.add(url)
@@ -49,6 +65,6 @@ def crawler(start_url, max_pages = 100):
     conn.close()
     print("Crawling Complete.")
 
-seed_urls = ["https://www.bbc.co.uk/sport/football/premier-league"]
+seed_urls = ["https://www.bbc.co.uk/sport/football/premier-league", "https://www.cnn.com"]
 for url in seed_urls:
     crawler(url, 50)
