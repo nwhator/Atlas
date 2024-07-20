@@ -3,16 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas</title>
+    <title>Atlas - Search Engine</title>
     <link rel="stylesheet" type="text/css" href="./static/style.css">
 </head>
-<body>
-    <div class="container">
-        <h1>ATLAS</h1>
-        <form action="/websearch" method="post">
-            <input type="text" name="query" placeholder="Search here">
-            <button type="submit">Search</button>
-        </form>
-    </div>
+<body>  
+    <section>
+        <div id="image-container">
+            <div id="image-layer1">
+                <img src="./static/images/file-video-svgrepo-com (1).png" alt="">
+                <img src="./static/images/open-book-svgrepo-com.png" alt="">
+            </div>
+            <div id="image-layer2">
+                <img src="./static/images/file-folder-zip-svgrepo-com.png" alt="">
+                <img src="./static/images/file-document-svgrepo-com.png" alt="">
+            </div>
+            <div id="image-layer3">
+                <img src="./static/images/image-ui-svgrepo-com.png" alt="">
+                <img src="./static/images/music-svgrepo-com.png" alt="">
+            </div>
+            <div id="image-layer4">
+                <img src="./static/images/location-internet-svgrepo-com.png" alt="">
+                <img src="./static/images/folder-svgrepo-com (1).png" alt="">
+            </div>
+        </div>    
+        <div id="search-box-region">
+            <form action="/websearch" method="post">
+                <input type="text" name="query" placeholder="Search here">
+                <button type="submit">
+                    <img src="./static/images/vuesax/linear/vuesax/linear/arrow-right.svg" alt="">
+                </button>
+            </form>
+            <div id="atlas-container">
+                <div id="atlas-text">
+                    <span class="green-text">At</span><span class="brown-text">las</span>
+                </div>
+                <div id="atlas-tagline">  
+                    <span>...</span><span class="brown-text">Explore the </span><span class="green-text">World</span><span>...</span>
+            </div> 
+        </div>
+
+        
+    </section>
+
+    <footer>
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/vuesax/linear/vuesax/linear/unlock.svg" alt="">
+                <span>User's Privacy</span>
+            </div>
+            <div class="footer-notes">
+                <h6>Click <a href="">here</a> to read our policy on user's privacy</h6>
+            </div>
+        </div>    
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/clarity_lightning-line.svg" alt="">
+                <span>Quick Search</span>
+            </div>
+            <div class="footer-notes">
+                <h6>We guaranatee a fast response time for search results</h6>
+            </div>
+        </div>
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/vuesax/linear/vuesax/linear/gps.svg" alt="">
+                <span>Accurate Results</span>
+            </div>
+            <div class="footer-notes">
+                <h6>Our search engine prioritises precision and accuracy</h6>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

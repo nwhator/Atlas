@@ -65,6 +65,6 @@ def crawler(start_url, max_pages = 100):
     conn.close()
     print("Crawling Complete.")
 
-seed_urls = ["https://www.bbc.co.uk/sport/football/premier-league", "https://www.cnn.com"]
+seed_urls = ["https://www.bbc.co.uk/sport/football", "https://www.cnn.com"]
 for url in seed_urls:
-    crawler(url, 50)
+    crawler(url, 100)

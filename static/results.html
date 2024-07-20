@@ -10,8 +10,10 @@
     <div class="container">
         <h1>Results</h1>
         <form action="/websearch" method="post">
-            <input type="text" placeholder="Enter your search query" value={{query}} name="query">
-            <button type="submit">Search</button>
+            <input type="text" name="query" placeholder="Search here">
+            <button type="submit">
+                <img src="./static/images/vuesax/linear/vuesax/linear/arrow-right.svg" alt="">
+            </button>
         </form>
         {% if urls %}
         {% for url in urls %}
@@ -26,5 +28,34 @@
     {%else%}
     <h1>No results found for your query.</h1>
     {% endif %}
+    <footer>
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/vuesax/linear/vuesax/linear/unlock.svg" alt="">
+                <span>User's Privacy</span>
+            </div>
+            <div class="footer-notes">
+                <h6>Click <a href="">here</a> to read our policy on user's privacy</h6>
+            </div>
+        </div>    
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/clarity_lightning-line.svg" alt="">
+                <span>Quick Search</span>
+            </div>
+            <div class="footer-notes">
+                <h6>We guaranatee a fast response time for search results</h6>
+            </div>
+        </div>
+        <div class="footer-box">
+            <div class="footer-head">
+                <img src="./static/images/vuesax/linear/vuesax/linear/gps.svg" alt="">
+                <span>Accurate Results</span>
+            </div>
+            <div class="footer-notes">
+                <h6>Our search engine prioritises precision and accuracy</h6>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
