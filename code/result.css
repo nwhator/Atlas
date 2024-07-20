@@ -142,9 +142,9 @@ body{
 
 .display-text{
     /*border: 2px solid black;*/
-    margin: 20px auto;
-    width: 1200px;
-    /*height: 200px;*/
+    margin: 20px 150px;
+    width: 800px;
+    height: 150px;
 }
 
 .text-box{
@@ -153,27 +153,26 @@ body{
 
 .text-box .text-title{
     /*border: 2px solid black;*/
-    width: 1200px;
+    /*width: 1200px;*/
     color: #260F01;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 900;
     line-height: normal;
     text-decoration-line: underline;
 }
 
-.text-container{
+/*.text-container{
     height: 60px;
-}
+}*/
 
 .text-box > p{
     /*border: 2px solid black;*/
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300px;
     line-height: normal;
     font-style: normal;
-    padding: 10px auto;
-    margin: 10px auto;
-    
+    padding: 5px auto;
+    margin: 10px auto; 
 }
 
 .text-box > p > a{
@@ -183,10 +182,10 @@ body{
 .text-bottom{
     /*border: 2px solid black;*/
     display: flex;
-    margin: 5px auto;
-    align-items: center;
-    justify-content: space-around;
-    width: 800px;
+    /*margin: auto;*/
+    /*align-items: center;*/
+    justify-content: space-between;
+    width: 600px;
 }
 
 .source{
@@ -268,7 +267,7 @@ body{
 
 footer{
     /*border: 2px solid black;*/
-    margin: auto;
+    margin: 5px auto;
 }
 
 footer > .footer-title{
